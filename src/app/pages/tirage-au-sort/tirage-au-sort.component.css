@@ -1,0 +1,41 @@
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} 
+
+.btn{
+    margin-bottom: 85px;
+} 
+/* ??? */
+.rectangle{
+    margin-bottom: 234px;
+} 
+
+div{
+    width: 896px;
+    height: 354px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} 
+.winnerMessage{
+    text-align: center;
+} 
+
+    button {
+    border: 0;
+    width: 453px;
+    height: 75px;
+    font-size: 20px;
+    text-align: center;
+    color: white;
+    background-color:#CE0033;
+    border-radius: 60px; 
+    /* à effacer une fois le flex mis en place */
+    margin-top: 200px;
+    margin-bottom: 85px;
+    border: 1px solid #000000;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+} 

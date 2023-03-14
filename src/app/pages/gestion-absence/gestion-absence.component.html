@@ -1,0 +1,66 @@
+<main>
+
+    <!-- PARTIE AJOUT D ABSEN.E.S -->
+    <div class="addNewAbsentContainer">
+
+        <!-- drop-down menu crée avec la boucle *ngFor -->
+    
+        <label class="addAnAbsent" for="absent-select">Ajouter un.e absent.e</label>
+        <!-- (change) function parameter contains classic event properties.
+        To get the value of changed value we need to use e.target.value property. -->
+        <select name="student" id="student" (change)="onSelected($event)">
+            <option value="">Sélectionner une personne</option>
+            <!-- je recupère l'id qui a une valeur unique ! -->
+            <option *ngFor="let student of studentsList" value ={{student.id}} >
+                {{student.name}}                       
+            </option>                    
+        </select>
+        <button class="addbutton" type='submit'(click)="addAbsent()">Ajouter</button>   
+    </div>   
+
+
+
+    <!-- LIGNE VERTICALE DE SEPARATION -->
+    <div class="vr"></div>
+
+
+    <!-- PARTIE LISTES DES ABSENT.E.S -->
+    <div class="absentListsContainer">
+
+        <!-- gender = male -->
+        <div class="gender">
+            <label class="absentsList" for="app-absent-list-by-gender">Liste des absents</label>
+            <ul>
+            <li *ngFor="let absent of absenceService.getAbsentByGender('male'); let indexAbsent = index"> 
+                <!-- &emsp; (« em space ») créer une espace quadruple -->
+                {{absent.name}}&emsp; 
+        
+                <button class="button-X" (click)="removeAbsent(absent)">X</button> 
+                </li>
+            </ul>
+        </div>
+
+        <!-- gender = female -->
+        <div class="gender">
+            <label class="absentsList" for="app-absent-list-by-gender">Liste des absentes</label>
+            <ul>
+                <li *ngFor="let absent of absenceService.getAbsentByGender('female'); let indexAbsent = index"> 
+                    {{absent.name}}&emsp;
+        
+                    <button class="button-X" (click)="removeAbsent(absent)">X</button> 
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+</main>
+
+
+
+
+
+
+
+
+

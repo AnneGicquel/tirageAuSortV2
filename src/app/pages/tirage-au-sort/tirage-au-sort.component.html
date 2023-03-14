@@ -1,0 +1,53 @@
+<main>
+
+    <!-- COMPOSANT BOUTON "SELECTIONNER UNE PERSONNE-->
+    
+    <!-- plusieurs fonctions dans un seul clic -> un point-virgule entre les fonctions -->
+    <!-- "isEnable -> change l'état du btn; getWinnerName -> renvoie un nom aléatoire" -->
+    
+   <button class="btn" (click)=" isEnable(); getWinnerName()">🎰 Sélectionner une personne 🎰</button> 
+        
+    
+   
+   <!-- COMPOSANT RECTANGLE AVEC MESSAGE -->
+    
+    <div class="rectangle" >   
+            <!-- ngIf version explicite avec <ng-template>  -->
+            <!-- if isDisabled est à true -> affiche 'Personne...' -->
+            <!-- sinon affiche #prompt -->
+    
+            <p *ngIf="isDisabled; else prompt">
+                Personne n’a été sélectionné actuellement 👀
+            </p>
+            <ng-template #prompt > 
+    
+                <!-- if gender 'male' -> affiche #prompt  -->
+    
+                <p class="winnerMessage" *ngIf="selectedWinner.gender === 'male'; else other_content" >
+                    {{selectedWinner.name}} 🌸<br>
+                Tu es le grand gagnant !</p>  
+               
+                <!-- sinon affiche #other_content -> gender 'female' -->
+    
+                <ng-template #other_content> 
+                <p class="winnerMessage" >
+                    {{selectedWinner.name}} 🌸<br>
+                Tu es la grande gagnante !</p>
+                </ng-template>  
+            </ng-template>  
+        </div>  
+    </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+   

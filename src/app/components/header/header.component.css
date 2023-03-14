@@ -1,0 +1,29 @@
+header {  
+    background-color:#CE0033;
+    margin: 0; 
+    position: fixed;   
+    height: 70px;     
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}  
+    
+header * {  
+    display: inline;  
+}  
+
+header li { 
+    margin: 25px;  
+}  
+
+header li a {  
+    color: white;  
+    font-size: 16px;
+    font-weight: 200;
+    text-decoration: none; 
+}  
+header li a:hover {
+    font-weight: bold;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000,-2px 4px 3px rgba(0,0,0,0.31);
+  }

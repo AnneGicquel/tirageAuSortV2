@@ -1,0 +1,88 @@
+/* partie ajout des absent(e)s */
+
+.addNewAbsentContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin-right: 93px;
+    margin-left: 15px;
+}
+
+.addAnAbsent{
+    margin: 17px 0; 
+    font-weight: 600;
+    font-size: 20px;
+}
+
+select {
+    width: 513px;
+    height: 73px;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 25px 31px;
+    border: none;
+    border-radius: 10px;
+    margin: 17px 0;    
+}
+.addbutton {
+    border: 0;
+    width: 143px;
+    height: 57px;
+    font-size: 20px;
+    text-align: center;
+    color: white;
+    background-color:#CE0033;
+    border-radius: 50px;
+    margin: 17px 0; 
+}
+
+
+/* ligne verticale de séparation */
+
+.vr{
+    border-left: 2px solid #000;
+    height:619px;
+}
+
+
+/* partie listes de absent(e)s */
+
+.absentListsContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+.female{
+    margin-top: 64px;
+}
+
+.absentsList{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.gender{
+    margin-left: 107px;
+    margin-top: 107px;
+}
+
+.button-X {
+    background-color: lightgray;
+    border-radius: 25px;
+}
+
+.class-name{
+    display: none;
+}
+
+/* disposition dans le main*/
+
+main{
+    display: flex;
+    flex-direction: row;
+    /* justify-content: center; */
+    align-items: center;
+    
+}
+
