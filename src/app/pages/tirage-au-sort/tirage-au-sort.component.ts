@@ -36,21 +36,18 @@ export class TirageAuSortComponent {
 
       // FILTRER:
 
-      /* j'ai trouvé ça long et 'compliqué' de retrouver les objets 
-      de la studentsList avec les nombres/id de l'absentList du LS. 
-      Alors, je me suis servi des booleans pour filtrer la studentsList 
-      et retrouver les absent.e.s*/
+      // Récupérer la liste des présent.e.s
+      const presentStudents = this.studentsList.filter(student => student.isPresent);
 
-
-      // Filtrer la liste pour ne garder que les absent.e.s qui n'ont pas encore gagné (pas de double appel possible)
-      let candidatesRunning = this.studentsList.filter(student => !student.isPresent && !student.hasBeenCalled);
+      // Filtrer la liste pour ne garder que les présent.e.s qui n'ont pas encore gagné (pas de doublons possible)
+      let candidatesRunning = presentStudents.filter(student => !student.hasBeenCalled);
       
       // Si iels ont toustes été appelé.é.s
       if (candidatesRunning.length === 0) {
         // réinitialisation de la liste des candidat.e.s en lice
-        candidatesRunning = this.studentsList.filter(student => !student.isPresent);
+        candidatesRunning = presentStudents
         //réinitialiser la propriété hasBeenCalled à false
-        candidatesRunning.forEach(absent => absent.hasBeenCalled = false)
+        candidatesRunning.forEach(present => present.hasBeenCalled = false)
         }
 
   
